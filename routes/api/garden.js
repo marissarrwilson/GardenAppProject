@@ -10,7 +10,7 @@ router.route("/")
 router
   .route("/:id")
   .get(gardenController.findById)
-  .put(gardenController.update)
-  .delete(gardenController.remove);
+  .put(gardenController.updatePost)
+  .delete(gardenController.removePost);
 
 module.exports = router;
