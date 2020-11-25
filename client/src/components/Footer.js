@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer style={{
-        position: "absolute",
+        position: "fixed",
         textAlign: "center",
         bottom: "0",
         width: "100%",
