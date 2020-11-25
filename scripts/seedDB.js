@@ -5,7 +5,11 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
+  "mongodb://localhost/gardenapp", {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+  }
 );
 
 const gardenSeed = [
@@ -16,7 +20,6 @@ const gardenSeed = [
     description: "Planted 100 carrot seeds!",
     postDate: new Date(Date.now()),
     plantedDate: "2020-11-25",
-    harvestDate: "Unknown"
   },
   {
     name: "Peas",
@@ -25,7 +28,7 @@ const gardenSeed = [
     description: "Harvested peas today!",
     postDate: new Date(Date.now()),
     plantedDate: "2020-09-25",
-
+    harvestWeight: "5 lbs"
   }
   // {
   //   title: "The Catcher in the Rye",
