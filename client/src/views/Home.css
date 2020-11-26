@@ -4,8 +4,11 @@
     margin-right:auto;
     margin-left:auto;
     position: relative;
-    text-align: center;
-    color: black;
+
+
+    /* text-align: center; */
+    color: white;
+
     margin-bottom: 150px;
  }
 
