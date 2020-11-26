@@ -13,16 +13,16 @@ import React from "react"
 
 
 
-function Cards(props){
+function Card(props){
     return(
 
 <div className="card" style={{width: '18rem'}}>
-  <img src="..." className="card-img-top" alt="..."/>
+  <img src="https://picsum.photos/200" className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{props.plant}</h5>
     <p className="card-text">Planted on {props.datestarted} over {props.squarefootage}.</p>
     <p className="card-text">{props.fielnotes}</p>
-    <a href="#" className="btn btn-primary">{props.viewdetails}</a>
+    <a href="#" className="btn btn-primary">{props.viewdetails}button here later change</a>
   </div>
 </div>
 

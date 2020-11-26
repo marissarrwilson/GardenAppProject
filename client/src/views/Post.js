@@ -1,5 +1,8 @@
 import React from "react";
 
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 function Post() {
   return (
     <div className="container">
@@ -54,6 +57,12 @@ function Post() {
                     <div className="form-check form-check-inline">
                         <label for="date-planted">Date Planted</label>
                         <div className="col-sm-6">
+                            <div className="form-group">
+                            <label>Date: </label>
+                            <div>
+                             <DatePicker />
+                            </div>
+                            </div>
                             <input className="form-control" id="date-planted" placeholder="MM/DD/YYYY"/>
                         </div>
                     </div>
@@ -62,7 +71,7 @@ function Post() {
 
                 <div className ="col-1"></div>
 
-                <div className="card col-5" style="width: 18rem">
+                <div className="card col-5" style={{width: "18rem"}}>
                     <img src="https://via.placeholder.com/100x30" className="card-img-top responsive" alt="..." />
                     <div className="card-body">
                     <p className="card-text">Crop Image</p>
