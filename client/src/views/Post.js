@@ -1,9 +1,10 @@
 import React from "react";
+import "./Post.css";
 
 function Post() {
   return (
     <div className="container">
-        <center><h1>New Post</h1></center>
+        <div className="pageTitle"><center><h1>New Post</h1></center></div>
 
      <form>  
             <input className="form-control form-control-lg" type="text" placeholder="Post Title"/>
@@ -12,7 +13,7 @@ function Post() {
 
             <div className="row">
                 <div className="form-group col-6">
-                    <label for="exampleFormControlSelect1">Plant Name</label>
+                    <label className="fieldLabel" for="exampleFormControlSelect1">Plant Name</label>
                     <select className="form-control" id="exampleFormControlSelect1">
                     <option>Carrots</option>
                     <option>Beets</option>
@@ -42,17 +43,17 @@ function Post() {
                     <div><br></br></div>
 
                     <div className="form-check form-check-inline">
-                        <label for="sqFootage">Sq. Footage</label>
+                        <label className="fieldLabel" for="sqFootage">Sq. Footage</label>
                         <div className="col-sm-5">
                         <input className="form-control" id="sqFootage"/>
                         </div>
-                        <small id="sqFootageInline" className="text-muted">Sq. feet </small>
+                        <small className="fieldLabel" id="sqFootageInline" className="text-muted">sq. ft. </small>
                     </div>
             
                     <div><br></br></div>
             
                     <div className="form-check form-check-inline">
-                        <label for="date-planted">Date Planted</label>
+                        <label className="fieldLabel" for="date-planted">Date Planted</label>
                         <div className="col-sm-6">
                             <input className="form-control" id="date-planted" placeholder="MM/DD/YYYY"/>
                         </div>
@@ -62,10 +63,10 @@ function Post() {
 
                 <div className ="col-1"></div>
 
-                <div className="card col-5" style="width: 18rem">
+                <div className="card col-5" >
                     <img src="https://via.placeholder.com/100x30" className="card-img-top responsive" alt="..." />
                     <div className="card-body">
-                    <p className="card-text">Crop Image</p>
+                    <p className="fieldLabel card-text">Plant Image</p>
                     </div>
                 </div>
         
@@ -74,10 +75,10 @@ function Post() {
             <div><br></br></div>
 
             <div id="crop-status">
-                <label for="crop-status">Crop Status</label>
+                <label className="fieldLabelCrop" for="crop-status">Crop Status</label>
                 <div className="form-check form-check-inline">
                 <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
-                <label className="form-check-label" for="inlineRadio1">
+                <label className="fieldLabel form-check-label" for="inlineRadio1">
                     Just planted
                 </label>
                 </div>
@@ -89,7 +90,7 @@ function Post() {
                     id="inlineRadio1"
                     value="option1"
                 />
-                <label className="form-check-label" for="inlineRadio1">
+                <label className="fieldLabel form-check-label" for="inlineRadio1">
                     <i className="fas fa-seedling"></i> Seedling
                 </label>
                 </div>
@@ -101,7 +102,7 @@ function Post() {
                     id="inlineRadio3"
                     value="option3"
                 />
-                <label className="form-check-label" for="inlineRadio3">
+                <label className="fieldLabel form-check-label" for="inlineRadio3">
                     <i className="fas fa-carrot"></i>Ready for Harvest
                 </label>
                 </div>
@@ -113,14 +114,14 @@ function Post() {
                     id="inlineRadio1"
                     value="option1"
                 />
-                <label className="form-check-label" for="inlineRadio1">Harvested</label>
+                <label className="fieldLabel form-check-label" for="inlineRadio1">Harvested</label>
                 </div>
             </div>
 
             <div><br></br></div>
 
             <div className="form-group">
-                <label for="exampleFormControlTextarea1">Field Notes</label>
+                <label className="fieldLabel" for="exampleFormControlTextarea1">Field Notes</label>
                 <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"
