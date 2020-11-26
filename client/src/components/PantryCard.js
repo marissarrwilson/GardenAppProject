@@ -19,4 +19,4 @@ function PantryCard(props){
     );
 }
 
-export default PantryCard
+export default PantryCard;
