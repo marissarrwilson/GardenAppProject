@@ -4,7 +4,7 @@ import Home from './views/Home'
 import Footer from './components/Footer'
 
 import { BrowserRouter as Router, Route} from "react-router-dom";
-import Cardswrap from "./components/Cardswrap";
+import Feed from "./views/Feed";
 
 // import Home from "./views/Home";
 // import Login from "./views/login";
@@ -23,7 +23,7 @@ function App() {
           {/* <Route path="/Pantry" component={Pantry} /> */}
           <Route path="/post" component={Post} />
           <Route path="/Login" component={Login} />
-          <Route path="/feed" component={Cardswrap}/>
+          <Route path="/feed" component={Feed}/>
           <Route exact path="/" component={Home} />
           </div>
         <Footer />
