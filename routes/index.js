@@ -1,13 +1,48 @@
-const path = require("path");
-const router = require("express").Router();
-const apiRoutes = require("./api");
+const gardenController = require("../controllers/gardenController");
 
 // API Routes
-router.use("/api", apiRoutes);
+// router.use("/api", apiRoutes);
+function router(app) {
+
+  app.get('/api/garden', async function(req, res) {
+    const data = await gardenController.getPosts()
+    res.send(data)
+  });
+  
+  app.post('/api/garden', async function(req, res) {
+    console.log(`[posting]....................`, req.body)
+    const data = await gardenController.createPost(req.body)
+    res.send(data)
+  });
+
+  app.delete('/api/garden/:id', async function(req, res) {
+    const postId = req.params.id
+    await gardenController.removePost(postId)
+    res.send( {message: "Just deleted recipe post"} )
+  })
+
+  app.put( '/api/garden/:id', async function( req, res ){
+    const postId = req.params.id
+    let postData = {...req.body}
+    console.log(`[put request].... postId: `, postId )
+    console.log(`[put request].... postData: `, postData )
+
+    const updatingPost = await gardenController.updatePost( postId, postData)
+    console.log(`[Checking updatingPost]...`, updatingPost)
+
+    res.send( {message: "Update has just been saved!"} )
+  });
+}
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// router.use(function(req, res) {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
+
+module.exports = router;
+// If no API routes are hit, send the React app
+// router.use(function(req, res) {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 module.exports = router;

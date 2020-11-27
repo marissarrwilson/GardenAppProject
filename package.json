@@ -25,5 +25,7 @@
     "if-env": "^1.0.4",
     "jquery": "^3.5.1",
     "mongoose": "^5.10.16"
+    "bootstrap": "^4.5.3",
+    "react-bootstrap": "^1.4.0"
   }
 }
