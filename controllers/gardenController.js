@@ -2,42 +2,41 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
-    db.Post
-      .find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  getPosts: async function() {
+    const results = await db.Post.find({})
+    console.log(`[getPosts]...`, results)
+    return results
   },
-  findById: function(req, res) {
-    db.User
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  createPost: async function(postData) {
+    const data = await db.Post.create({ 
+      name: postData.name,
+      imageUrl: postData.name,
+      status: postData.status,
+      sqft: postData.sqft,
+      description: postData.description,
+      postDate: postData.postDate,
+      plantedDate: postData.plantedDate,
+      harvestDate: postData.harvestDate
+    })
+    console.log(`[createPost]....`, data)
+    return data
   },
-  createUser: function(req, res) {
-    db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  removePost: async function(postId) {
+    const data = await db.Post.findByIdAndDelete(postId);
+    return data._id ? true : false
   },
-  createPost: function(req, res) {
-    db.Post
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  updatePost: function(req, res) {
-    db.User
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  removePost: function(req, res) {
-    db.Post
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  updatePost: async function(postId, postData) {
+    const data = {
+      name: postData.name,
+      imageUrl: postData.imageUrl,
+      status: postData.status,
+      sqft: postData.sqft,
+      description: postData.description,
+      postDate: postData.postDate,
+      plantedDate: postData.plantedDate,
+      harvestDate: postData.harvestDate
+    }
+    const result = await db.Post.findOneAndUpdate({_id: postId}, data, {new:true})
+    return result._id ? result._id : false
   }
-};
+}
