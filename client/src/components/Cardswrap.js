@@ -16,6 +16,15 @@ function Cardswrap() {
           <div className="col-xs-12 col-md-6 col-lg-4">
             <Card />
           </div>
+          <div className="col-xs-12 col-md-6 col-lg-4">
+            <Card />
+          </div>
+          <div className="col-xs-12 col-md-6 col-lg-4">
+            <Card />
+          </div>
+          <div className="col-xs-12 col-md-6 col-lg-4">
+            <Card />
+          </div>
         </div>
       </Container>
     </div>
