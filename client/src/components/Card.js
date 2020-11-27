@@ -1,4 +1,5 @@
 import React from "react";
+import "./Card.css";
 
 // Post Title (is this required???)
 // Crop Status
@@ -12,29 +13,37 @@ import React from "react";
 
 function Card(props) {
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      <h5 className="card-title"><li>Title here{props.Posttitle}</li></h5>
-      <img src="https://picsum.photos/200" className="card-img-top" alt="..." />
+    <div className="card" style={{ width: "22rem" }}>
+      <img src="https://picsum.photos/200/150" className="card-img-top" alt="..." />
       <div className="card-body">
-      <ul className="list-group list-group-flush">
-          <li className="list-group-item">Cras justo odio</li>
-          <li className="list-group-item">Dapibus ac facilisis in</li>
-          <li className="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <p className="card-text">
-          Planted on {props.DatePlanted} over {props.SqFootage}
-          sq. ft.
+        <h3 className="card-title">{props.title}New Title</h3>
+
+        <p className="plantName">
+          Crop Planted: {props.plantName}
         </p>
+
         <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.{props.CropStatus}
+          Planted on {props.datePlanted}__ over {props.sqFootage}__
+          sq.ft.
         </p>
-              
-        <p className="card-text">Some quick example text to build on the card title and make up the
-          bulk of the card's content.{props.fielnotes}</p>
-        <a href="/Details" className="btn btn-primary">
-          {props.FieldNotes}button here later change
-        </a>
+
+        <p className="card-text">Status: {props.status}</p>
+
+        <p className="card-text">
+          Field Notes: {props.fieldNotes}
+        </p>
+
+        <div className="row">
+          <a href="/post" className="btn btn-success col-5">
+            {props.viewdetails} Edit Post
+          </a>
+
+          <div className="col-2"></div>
+
+          <a href="/feed" className="btn btn-danger">
+            {props.viewdetails} Delete
+          </a>
+        </div>
       </div>
     </div>
   );
