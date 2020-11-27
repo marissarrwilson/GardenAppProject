@@ -1,15 +1,14 @@
 import React from 'react'
 import "./Header.css";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
-import { Link } from 'react-router-dom';
 
 export default function Header(props) {
 
   return (
-        <Container>
+
             <Navbar collapseOnSelect className="navBar" expand="md" variant="dark" fixed="top">
                 <Navbar.Brand href="/" className="brandNav">
-                  <h1><center>Get Growing</center></h1>
+                  <h1><center>Get Growing <i class="fas fa-seedling"></i></center></h1>
                   <h5>Your Gardening e-Journal</h5>
                 <Button className="navBtn" href="/pantry" variant="secondary" active >My Pantry</Button>
                 <Button className="navBtn" href="/feed" variant="secondary" active>My Feed</Button>
@@ -21,9 +20,8 @@ export default function Header(props) {
                     <Nav.Link href="/login">Log in</Nav.Link>
                     <Nav.Link href="/signup">Sign Up</Nav.Link>
                 </Nav>               
-                </Navbar.Collapse>
-                
+                </Navbar.Collapse>                
             </Navbar>
-        </Container>
+
   )
 }

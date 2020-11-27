@@ -16,19 +16,19 @@ import Login from "./views/login";
 function App() {
   return (
     <Router>
-     <div className="container">
+
        <div className="App">
         <Header />
-       
+        <div className="container">
           {/* <Route path="/Pantry" component={Pantry} /> */}
           <Route path="/post" component={Post} />
           <Route path="/Login" component={Login} />
           <Route path="/feed" component={Cardswrap}/>
           <Route exact path="/" component={Home} />
-
+          </div>
         <Footer />
        </div>
-      </div>
+
     </Router>
 
   );
