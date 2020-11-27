@@ -8,7 +8,8 @@ module.exports = {
     return results
   },
   createPost: async function(postData) {
-    const data = await db.Post.create({ 
+    const data = await db.Post.create({
+      title: postData.title, 
       name: postData.name,
       imageUrl: postData.name,
       status: postData.status,
@@ -27,6 +28,7 @@ module.exports = {
   },
   updatePost: async function(postId, postData) {
     const data = {
+      title: postData.title,
       name: postData.name,
       imageUrl: postData.imageUrl,
       status: postData.status,
