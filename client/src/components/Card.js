@@ -10,18 +10,18 @@ function Card(props) {
         <h3 className="card-title"><bold>{props.title}</bold></h3>
 
         <p className="plantName">
-          Crop Planted: {props.name}
+          <bold>Crop Planted:</bold> {props.name}
         </p>
 
         <p className="card-text">
-          Planted on {props.datePlanted} over {props.sqft}
-          sq.ft.
+          <bold>Planted on</bold> {props.datePlanted} <bold>over</bold> {props.sqft}
+           <bold>sq.ft.</bold>
         </p>
 
-        <p className="card-text">Status: {props.status}</p>
+        <p className="card-text"><bold>Status:</bold> {props.status}</p>
 
         <p className="card-text">
-          Field Notes: {props.description}
+          <bold>Field Notes:</bold> {props.description}
         </p>
 
         <div className="row">
