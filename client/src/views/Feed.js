@@ -28,7 +28,7 @@ function Feed() {
                 image={post.image}
                 name={post.name}
                 sqft={post.sqft}
-                plantedDate={post.datePlanted}
+                datePlanted={post.datePlanted}
                 status={post.status}
                 description={post.description}
               />
