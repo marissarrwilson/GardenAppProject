@@ -1,5 +1,6 @@
 .card {
-    color: black
+    color: black;
+    padding: 30px;
 }
 .card-title {
     color: black
@@ -9,4 +10,8 @@
 }
 .row {
     padding-left: 10px
+}
+.card-img-top {
+    width: 22rem;
+    height: 20rem;
 }
