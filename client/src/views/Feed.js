@@ -1,26 +1,39 @@
-import React from "react";
+import React, {useEffect, useState } from "react";
 import Card from "../components/Card";
 import { Container } from "react-bootstrap";
-import "./Feed.css"
+import "./Feed.css";
+import API from "../utils/API"
 
 function Feed() {
+
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    loadPosts()
+  }, [])
+
+  async function loadPosts() {
+    const results = await API.getPosts()
+    setPosts(results.data)
+  };
+
   return (
     <div className="wrapper">
       <Container>
         <div className="row">
-          <div className="col-xs-12 col-md-6 col-lg-4">
-            <Card>
-
-            </Card>
-          </div>
-
-          <div className="col-xs-12 col-md-6 col-lg-4">
-            <Card />
-          </div>
-          
-          <div className="col-xs-12 col-md-6 col-lg-4">
-            <Card />
-          </div>
+          {posts.map((post) => {
+            return (
+              <Card key={post.id}
+                title={post.title}
+                image={post.image}
+                name={post.name}
+                sqft={post.sqft}
+                plantedDate={post.datePlanted}
+                status={post.status}
+                description={post.description}
+              />
+            );
+          })}
         </div>
       </Container>
     </div>
