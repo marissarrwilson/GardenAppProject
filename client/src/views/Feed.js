@@ -25,10 +25,10 @@ function Feed() {
             return (
               <Card key={post.id}
                 title={post.title}
-                image={post.image}
+                image={post.imageUrl}
                 name={post.name}
                 sqft={post.sqft}
-                datePlanted={post.datePlanted}
+                datePlanted={post.plantedDate}
                 status={post.status}
                 description={post.description}
               />
