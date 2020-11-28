@@ -8,7 +8,7 @@ import manImg from '../assets/images/man_resize_darken.jpg'
 export default function Home(props) {
 
     return (
-        <Container className="container container-fluid">
+        <div className="justify-content-center text-center">
             <div className="mainImg">
             <Image src={manImg} w-100 />
             <div className="centered-img-overlay">
@@ -21,7 +21,7 @@ export default function Home(props) {
                 <p>Get Growing was developed by a team of software developers who are passionate about gardening and growing their own food. This app will allow you to create a new post for every plant in your garden, make field notes and track your progress. You can also view posts by like-minded garden enthusiasts by viewing your feed.
                 </p>
             </div>
-        </Container>
+        </div>
     )
 }
 

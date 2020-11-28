@@ -19,7 +19,7 @@ function App() {
 
        <div className="App">
         <Header />
-        <div className="container">
+        <div className="container-fluid">
           {/* <Route path="/Pantry" component={Pantry} /> */}
           <Route path="/post" component={Post} />
           <Route path="/Login" component={Login} />

@@ -73,7 +73,7 @@ function Post() {
   // }, [] )
 
   return (
-    <div className="container">
+    <div className="main">
       <div className="pageTitle">
         <center>
           <h1>New Post</h1>
