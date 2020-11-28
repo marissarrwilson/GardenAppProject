@@ -9,7 +9,7 @@ const postSchema = new Schema({
   sqft: { type: Number, required: true },
   description: { type: String, required: true, trim: true },
   postDate: { type: Date, default: Date.now },
-  plantedDate: { type: Date },
+  plantedDate: { type: String },
   harvestDate: { type: Date }
 
 });
