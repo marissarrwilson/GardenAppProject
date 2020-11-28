@@ -1,14 +1,9 @@
 import './App.css';
-import Header from './components/Header'
-import Home from './views/Home'
-import Footer from './components/Footer'
-
 import { BrowserRouter as Router, Route} from "react-router-dom";
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './views/Home'
 import Feed from "./views/Feed";
-
-// import Home from "./views/Home";
-// import Login from "./views/login";
-// import Pantry from "./view/pantry";
 import Post from "./views/Post";
 import Signup from "./views/Signup";
 import Login from "./views/login";

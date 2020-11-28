@@ -4,11 +4,7 @@
     margin-right:auto;
     margin-left:auto;
     position: relative;
-
-
-    /* text-align: center; */
     color: white;
-
     margin-bottom: 150px;
  }
 
@@ -23,7 +19,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
 
 .centered-img-overlay p {
@@ -35,7 +30,7 @@
     filter: brightness(100%);
 }
 
-.aboutUs {
+.about {
     position: absolute;
     top:700px;
     width:100%;
@@ -43,7 +38,7 @@
     text-align: center;
 }
 
-.aboutUs h1 {
+.about h1 {
     font-family: atocha, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -51,33 +46,30 @@
     text-align: center;
 }
 
-.aboutUs p {
+.about p {
     font-family: aileron, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: black;
     text-align: center;
-    padding-bottom: 100px;
     padding-left: 25%;
     padding-right: 25%;
 }
-/* 
-@media only screen and (max-width: 600px) { 
-    .carousel h1 { 
-        display: none;
-        font-size: 200%;
-    }
-    .carousel p {
-        font-size: 80%;
-    }
-} 
 
-@media only screen and (max-width: 400px) { 
-    .carousel h1 { 
-        display: none;
-        font-size: 180%;
-    }
-    .carousel p {
-        font-size: 80%;
-    }
-}  */
+.aboutApp p {
+    padding-bottom: 10px;
+}
+
+.aboutUs p {
+    padding-bottom: 100px;
+}
+
+
+hr {
+    border: 0;
+    clear: both;
+    display:block;
+    width: 40%;               
+    background-color: black;
+    height: 1px;
+}

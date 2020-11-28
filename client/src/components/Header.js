@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Header.css";
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 
 export default function Header(props) {
 
@@ -10,7 +10,7 @@ export default function Header(props) {
                 <Navbar.Brand href="/" className="brandNav">
                   <h1><center>Get Growing <i class="fas fa-seedling"></i></center></h1>
                   <h5>Your Gardening e-Journal</h5>
-                <Button className="navBtn" href="/pantry" variant="secondary" active >My Pantry</Button>
+                {/* <Button className="navBtn" href="/pantry" variant="secondary" active >My Pantry</Button> */}
                 <Button className="navBtn" href="/feed" variant="secondary" active>My Feed</Button>
                 <Button className="navBtn" href ="/post" variant="danger" active>+ New Post</Button>
                 </Navbar.Brand>
