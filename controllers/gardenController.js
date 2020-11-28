@@ -11,7 +11,7 @@ module.exports = {
     const data = await db.Post.create({ 
       title: postData.title,
       name: postData.name,
-      imageUrl: postData.name,
+      imageUrl: postData.imageUrl,
       status: postData.status,
       sqft: postData.sqft,
       description: postData.description,

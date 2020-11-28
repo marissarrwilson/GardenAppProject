@@ -7,6 +7,9 @@ import API from "../utils/API";
 // import "react-datepicker/dist/react-datepicker.css";
 
 function Post() {
+
+  let image = ""  
+
   const [formData, setFormData] = useState({});
 
   function handleChange(event) {
@@ -15,7 +18,6 @@ function Post() {
   }
 
   async function handleSelectChange(event) {
-    let image;
     const { name, value } = event.target;
     console.log(event.target.value);
     // now change the image, grab the new one
@@ -38,9 +40,11 @@ function Post() {
 
   async function handleFormSubmit(event) {
     event.preventDefault();
+    // console.log(`Looking what's in image: `, image)
+    // formData.imageUrl = image
     await API.savePost({
       title: formData.title,
-      imageUrl: formData.imageUrl,
+      imageUrl: formData.image,
       name: formData.name,
       status: formData.status,
       sqft: formData.sqft,
@@ -159,6 +163,7 @@ function Post() {
               src={formData.image || "https://via.placeholder.com/100x30"}
               className="card-img-top responsive"
               alt="..."
+              name="imageUrl"
             />
             <div className="card-body">
               <p className="fieldLabel card-text">Plant Image</p>
@@ -178,12 +183,12 @@ function Post() {
             <input
               className="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="status"
               id="inlineRadio1"
-              value="option1"
+              value="Just Planted"
               onChange={handleChange}
             />
-            <label className="fieldLabel form-check-label" for="inlineRadio1" name="status" value={formData.status}>
+            <label className="fieldLabel form-check-label" for="inlineRadio1">
               Just planted
             </label>
           </div>
@@ -191,9 +196,10 @@ function Post() {
             <input
               className="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="status"
               id="inlineRadio1"
-              value="option1"
+              value="Seedling"
+              onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio1">
               <i className="fas fa-seedling"></i> Seedling
@@ -203,9 +209,10 @@ function Post() {
             <input
               className="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="status"
               id="inlineRadio3"
-              value="option3"
+              value="Ready for Harvest"
+              onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio3">
               <i className="fas fa-carrot"></i>Ready for Harvest
@@ -215,9 +222,10 @@ function Post() {
             <input
               className="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="status"
               id="inlineRadio1"
-              value="option1"
+              value="Harvested"
+              onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio1">
               Harvested
