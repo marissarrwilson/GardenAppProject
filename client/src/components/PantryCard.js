@@ -1,12 +1,8 @@
 import React from "react"
 
-
 function PantryCard(props){
 
-    
-
     return(
-
         <div className="card" style={{width: '18rem'}}>
             <img src={props.image} className="card-img-top" alt={props.name}/>
             <div className="card-body">
@@ -15,7 +11,6 @@ function PantryCard(props){
                 <p>Total weight: {props.weight} lbs</p>
             </div>
         </div>
-
     );
 }
 

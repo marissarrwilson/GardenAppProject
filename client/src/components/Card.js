@@ -1,16 +1,6 @@
 import React from "react";
 import "./Card.css";
 
-// Post Title (is this required???)
-// Crop Status
-// Square Footage
-// Quantity
-// Harvest Weight
-// Date Started
-// Date Planted
-// Date Harvested
-// Field Notes
-
 function Card(props) {
   return (
     <div className="card" style={{ width: "22rem" }}>
