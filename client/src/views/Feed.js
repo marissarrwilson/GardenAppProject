@@ -17,6 +17,14 @@ function Feed() {
     setPosts(results.data)
   };
 
+  async function removePost(id) {
+    const result = await API.deletePost(id)
+    console.log(`[removePost]`, result)
+    loadPosts()
+
+    // add code here to remove a book using API
+  }
+
   return (
     <div className="wrapper">
       <Container>
@@ -31,6 +39,7 @@ function Feed() {
                 datePlanted={post.plantedDate}
                 status={post.status}
                 description={post.description}
+                function={() => removePost(post._id)}
               />
             );
           })}
