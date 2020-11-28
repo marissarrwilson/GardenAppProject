@@ -7,21 +7,21 @@ function Card(props) {
     <div className="card" style={{ width: "22rem" }}>
       <img src={props.image} className="card-img-top" alt="Plant" />
       <div className="card-body">
-        <h3 className="card-title"><bold>{props.title}</bold></h3>
+        <h3 className="card-title"><b>{props.title}</b></h3>
 
         <p className="plantName">
-          <bold>Crop Planted:</bold> {props.name}
+          <b>Crop Planted:</b> {props.name}
         </p>
 
         <p className="card-text">
-          <bold>Planted on</bold> {props.datePlanted} <bold>over</bold> {props.sqft}
-           <bold>sq.ft.</bold>
+          <b>Planted on</b> {props.datePlanted} <b>over</b> {props.sqft}
+           <b> sq.ft.</b>
         </p>
 
-        <p className="card-text"><bold>Status:</bold> {props.status}</p>
+        <p className="card-text"><b>Status:</b> {props.status}</p>
 
         <p className="card-text">
-          <bold>Field Notes:</bold> {props.description}
+          <b>Field Notes:</b> {props.description}
         </p>
 
         <div className="row">
