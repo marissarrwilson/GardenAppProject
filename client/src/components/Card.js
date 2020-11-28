@@ -4,28 +4,28 @@ import "./Card.css";
 function Card(props) {
   return (
     <div className="card" style={{ width: "22rem" }}>
-      <img src="https://picsum.photos/200/150" className="card-img-top" alt="..." />
+      <img src={props.image} className="card-img-top" alt="..." />
       <div className="card-body">
         <h3 className="card-title">{props.title}New Title</h3>
 
         <p className="plantName">
-          Crop Planted: {props.plantName}
+          Crop Planted: {props.name}
         </p>
 
         <p className="card-text">
-          Planted on {props.datePlanted}__ over {props.sqFootage}__
+          Planted on {props.datePlanted}__ over {props.sqft}__
           sq.ft.
         </p>
 
         <p className="card-text">Status: {props.status}</p>
 
         <p className="card-text">
-          Field Notes: {props.fieldNotes}
+          Field Notes: {props.description}
         </p>
 
         <div className="row">
           <a href="/post" className="btn btn-success col-5">
-            {props.viewdetails} Edit Post
+           Edit Post
           </a>
 
           <div className="col-2"></div>
