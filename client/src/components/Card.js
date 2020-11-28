@@ -4,16 +4,16 @@ import "./Card.css";
 function Card(props) {
   return (
     <div className="card" style={{ width: "22rem" }}>
-      <img src={props.image} className="card-img-top" alt="..." />
+      <img src={props.image} className="card-img-top" alt="Plant image" />
       <div className="card-body">
-        <h3 className="card-title">{props.title}New Title</h3>
+        <h3 className="card-title"><bold>{props.title}</bold></h3>
 
         <p className="plantName">
           Crop Planted: {props.name}
         </p>
 
         <p className="card-text">
-          Planted on {props.datePlanted}__ over {props.sqft}__
+          Planted on {props.datePlanted} over {props.sqft}
           sq.ft.
         </p>
 
@@ -33,7 +33,9 @@ function Card(props) {
           <a href="/feed" className="btn btn-danger">
             {props.viewdetails} Delete
           </a>
+
         </div>
+        
       </div>
     </div>
   );
