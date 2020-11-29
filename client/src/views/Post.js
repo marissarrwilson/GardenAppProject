@@ -13,7 +13,11 @@ function Post() {
 
     const [formData, setFormData] = useState({});
 
-    const [showModal, setShowModal] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+
+    const hideModal = () => {
+        setIsOpen(false);
+    }
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -58,7 +62,7 @@ function Post() {
             harvestDate: formData.harvestDate,
         });
 
-        setShowModal(true);
+        setIsOpen(true);
 
         setFormData({
             title: "",
@@ -217,7 +221,7 @@ function Post() {
                             onChange={handleChange}
                         />
                         <label className="fieldLabel form-check-label" for="inlineRadio3">
-                            <i className="fas fa-carrot"></i>Ready for Harvest
+                            <i className="fas fa-carrot"></i> Ready for Harvest
             </label>
                     </div>
                     <div className="form-check form-check-inline">
@@ -268,13 +272,15 @@ function Post() {
           </button>
                 </center>
             </form>
-            <Modal show={showModal} onHide={showModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Post Added!</Modal.Title>
+            <Modal show={isOpen} onHide={hideModal} aria-labelledby="contained-modal-title-vcenter" centered>
+                <Modal.Header className="d-block text-center justify-content-center"> 
+                    <Modal.Title className="modalTitle">Post Added!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Click <Modal.Link to="/feed">here</Modal.Link> to view your feed.</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={showModal}>
+                <Modal.Footer className="d-block text-center justify-content-center">
+                    <Button className="modalBtn" variant="primary" href="/feed">
+                        View Feed
+                    </Button>
+                    <Button className="modalBtn" variant="secondary" onClick={hideModal}>
                         Close
                     </Button>
                 </Modal.Footer>
