@@ -28,6 +28,11 @@ function Feed() {
   return (
     <div className="wrapper">
       <Container>
+        <div className="pageTitle">
+          <center>
+            <h1>News Feed</h1>
+          </center>
+        </div>
         <div className="row">
           {posts.map((post) => {
             return (
