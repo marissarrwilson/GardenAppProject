@@ -38,7 +38,7 @@ module.exports = {
       plantedDate: postData.plantedDate,
       harvestDate: postData.harvestDate
     }
-    const result = await db.Post.findOneAndUpdate({_id: postId}, data, {new:true})
+    const result = await db.Post.findByIdAndUpdate({_id: postId}, data, {new:true})
     return result._id ? result._id : false
   }
 }
