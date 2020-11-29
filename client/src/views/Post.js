@@ -67,15 +67,6 @@ function Post() {
     });
   }
 
-  // useEffect( function(){
-  //     // anything we need to load at start
-  //     // const response = await axios.get('https://trefle.io/api/v1/plants/search?token=3pk9iwkeL7wAnJqrszRjMIdNfRaMqGyYvx156aJPj2g&q=coconut')
-
-  //     // response.data.results.map(result => ({
-  //     //         image: result.data.image_url
-  //     //     }))
-  // }, [] )
-
   return (
     <div className="main">
       <div className="pageTitle">
@@ -138,12 +129,12 @@ function Post() {
                 Date Planted
               </label>
               <div className="col-sm-6">
-                <div className="form-group">
-                  <label>Date: </label>
+                {/* <div className="form-group">
+                  <label>Date: </label> */}
                   {/* <div>
                                         <DatePicker />
                                     </div> */}
-                </div>
+                {/* </div> */}
                 <input
                   className="form-control"
                   id="date-planted"
@@ -160,7 +151,7 @@ function Post() {
 
           <div className="card col-5">
             <img
-              src={formData.image || "https://via.placeholder.com/100x30"}
+              src={formData.image || "https://via.placeholder.com/320x352"}
               className="card-img-top responsive"
               alt="..."
               name="imageUrl"

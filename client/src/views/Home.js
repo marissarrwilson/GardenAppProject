@@ -30,7 +30,3 @@ export default function Home(props) {
         </div>
     )
 }
-
-{/* <p>Track your plants and make the most of the season.</p>
-<p>Track when you plant seeds and when you harvest.</p>
-<p>See what you have growing by viewing your pantry.</p> */}
