@@ -1,6 +1,6 @@
 # Get Growing
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg "License Badge")
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
 ## 🌱 About the Project
 
