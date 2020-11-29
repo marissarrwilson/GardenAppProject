@@ -40,3 +40,7 @@
     padding-left: 5px;
     padding-right: 50px;
 }
+
+.modalTitle, .modalBtn {
+    align-content: center;
+}
