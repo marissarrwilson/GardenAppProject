@@ -128,7 +128,7 @@ function Post() {
         <div>
           <br></br>
         </div>
-        
+
         <div className="card col-sm-12 col-lg-8">
           <img
             src={formData.image || "https://via.placeholder.com/320x352"}
@@ -146,42 +146,40 @@ function Post() {
         </div>
 
         <div className="row form-check form-check-inline">
-          <label className="fieldLabel" for="sqFootage">
-            Sq. Footage
-          </label>
-          <div className="col-lg-3">
-            <input
-              className="form-control"
-              id="sqFootage"
-              name="sqft"
-              onChange={handleChange}
-              value={formData.sqft}
-            />
-          </div>
-          <small className="fieldLabel text-muted col-sm-12" id="sqFootageInline">
-            sq. ft.{" "}
-          </small>
-          
-          <div className="col-lg-1 col-sm-12"></div>
 
-          <label className="fieldLabel col-xs-12" for="date-planted">
-            Date Planted
-          </label>
-          <div className="col-lg-3">
-            {/* <div className="form-group">
-                  <label>Date: </label> */}
-            {/* <div>
-                                        <DatePicker />
-                                    </div> */}
-            {/* </div> */}
-            <input
-              className="form-control"
-              id="date-planted"
-              placeholder="MM/DD/YYYY"
-              name="plantedDate"
-              onChange={handleChange}
-              value={formData.plantedDate}
-            />
+          <div className="form-check-inline col-sm-12 col-lg-5">
+            <label className="fieldLabel col-sm-6" for="sqFootage">
+              Sq. Footage
+            </label>
+            <div className="col-5">
+              <input
+                className="form-control"
+                id="sqFootage"
+                name="sqft"
+                onChange={handleChange}
+                value={formData.sqft}
+              />
+            </div>
+            <small className="fieldLabel text-muted col-3" id="sqFootageInline">
+              sq. ft.{" "}
+            </small>
+          </div>
+
+         
+          <div className="form-check-inline col-sm-12 col-lg-5">
+            <label className="fieldLabel col-sm-6" for="date-planted">
+              Date Planted
+            </label>
+            <div className="col-7 ">
+              <input
+                className="form-control"
+                id="date-planted"
+                placeholder="MM/DD/YYYY"
+                name="plantedDate"
+                onChange={handleChange}
+                value={formData.plantedDate}
+              />
+            </div>
           </div>
         </div>
 
@@ -203,7 +201,7 @@ function Post() {
               onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio1">
-            <i class="fas fa-dot-circle"></i> Just planted
+              <i class="fas fa-dot-circle"></i> Just planted
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -242,7 +240,7 @@ function Post() {
               onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio1">
-            <i class="fas fa-leaf"></i> Harvested
+              <i class="fas fa-leaf"></i> Harvested
             </label>
           </div>
         </div>
