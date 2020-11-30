@@ -4,12 +4,20 @@ const gardenController = require("../controllers/gardenController");
 // router.use("/api", apiRoutes);
 function router(app) {
 
-  app.get('/api/garden', async function(req, res) {
-    const data = await gardenController.getPosts()
+  // app.get('/api/garden', async function(req, res) {
+  //   const data = await gardenController.getPosts()
+  //   res.send(data)
+  // });
+
+  app.get('/api/garden/:user?', async function(req, res) {
+    const userId = req.params.user || ""
+    console.log("Checking userId: ", userId)
+    const data = await gardenController.getPosts(userId)
     res.send(data)
   });
   
-  app.post('/api/garden', async function(req, res) {
+  app.post('/api/garden/:user', async function(req, res) {
+    req.body.user = req.params.user
     console.log(`[posting]....................`, req.body)
     const data = await gardenController.createPost(req.body)
     res.send(data)

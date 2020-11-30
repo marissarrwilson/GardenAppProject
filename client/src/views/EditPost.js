@@ -1,10 +1,8 @@
 import axios from "axios";
 import "./Post.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import API from "../utils/API";
 import { Button, Modal } from "react-bootstrap";
-import UserContext from "../context/UserContext";
-import { NavLink } from "react-router-dom"
 
 // import DatePicker from 'react-datepicker';
 // import "react-datepicker/dist/react-datepicker.css";
@@ -12,9 +10,9 @@ import { NavLink } from "react-router-dom"
 function Post() {
   let image = "";
 
-  const { userData, setUserData } = useContext(UserContext);
+  const [formData, setFormData] = useState({
 
-  const [formData, setFormData] = useState({});
+  });
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,18 +51,17 @@ function Post() {
     event.preventDefault();
     // console.log(`Looking what's in image: `, image)
     // formData.imageUrl = image
-    await API.savePost( userData.user.id,
-    {
+    await API.savePost({
       title: formData.title,
       imageUrl: formData.image,
       name: formData.name,
       status: formData.status,
       sqft: formData.sqft,
       description: formData.description,
+      // postDate: formObject.postDate,
       plantedDate: formData.plantedDate,
       harvestDate: formData.harvestDate,
-    }
-    );
+    });
 
     setIsOpen(true);
 
@@ -75,6 +72,7 @@ function Post() {
       status: "",
       sqft: "",
       description: "",
+      // postDate: "",
       plantedDate: "",
       harvestDate: "",
     });
@@ -287,9 +285,9 @@ function Post() {
           <Modal.Title className="modalTitle">Post Added!</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="d-block text-center justify-content-center">
-          <NavLink className="modalBtn" variant="primary" to="/feed">
+          <Button className="modalBtn" variant="primary" href="/feed">
             View Feed
-          </NavLink>
+          </Button>
           <Button className="modalBtn" variant="secondary" onClick={hideModal}>
             Close
           </Button>

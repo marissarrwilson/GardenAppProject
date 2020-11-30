@@ -1,20 +1,30 @@
-import React, {useEffect, useState } from "react";
+import React, {useEffect, useState, useContext } from "react";
 import Card from "../components/Card";
 import { Container } from "react-bootstrap";
 import "./Feed.css";
 import API from "../utils/API"
+import UserContext from "../context/UserContext";
 
 function Feed() {
 
   const [posts, setPosts] = useState([])
+
+  const { userData, setUserData } = useContext(UserContext);
+
 
   useEffect(() => {
     loadPosts()
   }, [])
 
   async function loadPosts() {
-    const results = await API.getPosts()
-    setPosts(results.data)
+    if(userData && userData.user && userData.user.id){
+      const results = await API.getPosts(userData.user.id)
+      setPosts(results.data)
+    } else {
+      const results = await API.getPosts()
+      setPosts(results.data)
+
+    }
   };
 
   async function removePost(id) {
@@ -45,6 +55,7 @@ function Feed() {
                 status={post.status}
                 description={post.description}
                 postDate={post.postDate}
+                user={post.user.displayName || "No user"}
                 function={() => removePost(post._id)}
               />
             );

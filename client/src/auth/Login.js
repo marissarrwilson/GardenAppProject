@@ -22,6 +22,7 @@ export default function Login() {
         loginUser
       );
       setUserData({
+        
         token: loginRes.data.token,
         user: loginRes.data.user,
       });
