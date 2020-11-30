@@ -37,11 +37,11 @@ export default function Header(props) {
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navLinks ml-auto mt-0 mt-lg-0">
           {userData.user ? (
-            <NavLink onClick={logout} to="/">Log out</NavLink>
+            <Nav.Link onClick={logout} to="/">Log out</Nav.Link>
           ) : (
             <div>
-              <NavLink onClick={login} >Log in</NavLink>
-              <NavLink onClick={register} >Sign Up</NavLink>
+              <Nav.Link onClick={login} >Log in</Nav.Link>
+              <Nav.Link onClick={register} >Sign Up</Nav.Link>
             </div>
           )}
         </Nav>               
