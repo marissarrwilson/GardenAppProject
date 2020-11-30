@@ -1,7 +1,8 @@
 import React from 'react';
 import "./Home.css";
-import { Image, Button } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import manImg from '../assets/images/man_resize_darken.jpg'
+import { NavLink } from "react-router-dom";
 
 export default function Home(props) {
 
@@ -11,7 +12,7 @@ export default function Home(props) {
             <Image src={manImg} w-100 />
             <div className="centered-img-overlay">
             <p>Track your plants and make the most of the season.</p>
-            <Button href="/register"><b>Sign Up Today!</b></Button>
+            <NavLink className="btn btn-primary" to="/register">Sign Up Today!</NavLink>
             </div>
             </div>
             <div className="about">
