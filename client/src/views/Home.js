@@ -11,7 +11,7 @@ export default function Home(props) {
             <Image src={manImg} w-100 />
             <div className="centered-img-overlay">
             <p>Track your plants and make the most of the season.</p>
-            <Button href="/signup"><b>Sign Up Today!</b></Button>
+            <Button href="/register"><b>Sign Up Today!</b></Button>
             </div>
             </div>
             <div className="about">
