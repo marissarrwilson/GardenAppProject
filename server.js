@@ -19,21 +19,21 @@ if (process.env.NODE_ENV === "production") {
 apiRouter(app);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/gardenapp");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/gardenapp");
 
 
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost:27017/gardenapp",
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//   },
-//   (err) => {
-//     if (err) throw err;
-//     console.log("MongoDB connection established");
-//   }
-// );
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:27017/gardenapp",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  },
+  (err) => {
+    if (err) throw err;
+    console.log("MongoDB connection established");
+  }
+);
 
 app.use("/users",require("./routes/userRouter"));
 
