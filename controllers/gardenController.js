@@ -17,7 +17,7 @@ module.exports = {
       description: postData.description,
       postDate: postData.postDate,
       plantedDate: postData.plantedDate,
-      harvestDate: postData.harvestDate
+      harvestDate: postData.harvestDate,
     })
     console.log(`[createPost]....`, data)
     return data
@@ -36,7 +36,7 @@ module.exports = {
       description: postData.description,
       postDate: postData.postDate,
       plantedDate: postData.plantedDate,
-      harvestDate: postData.harvestDate
+      harvestDate: postData.harvestDate,
     }
     const result = await db.Post.findByIdAndUpdate({_id: postId}, data, {new:true})
     return result._id ? result._id : false
