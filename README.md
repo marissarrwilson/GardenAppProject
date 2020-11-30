@@ -14,9 +14,9 @@ Get Growing can be accessed via the following link: ___________
 
 ## 💡 Usage
 
-Nagivate the site via the heroku link. In the homepage, sign-up for Get Growing or login using an already existing account. Once logged in, you will be able to access the newsfeed and create new posts for the plants in your garden.
+Navigate the site via the heroku link. In the homepage, sign-up for Get Growing or login using an already existing account. Once logged in, you will be able to access the newsfeed and create new posts for the plants in your garden.
 
-## Technologies Used
+## 🔬 Technologies Used
 * React, React-Bootstrap, Bootstrap, Adobe Fonts, Font Awesome
 * Mongoose, Node.js, Express, Heroku
 * Github Projects
