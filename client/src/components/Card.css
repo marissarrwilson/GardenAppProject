@@ -6,15 +6,19 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .card-title {
     color: black
 }
+
 .card-text {
     color: black
 }
+
 .row {
     padding-left: 10px
 }
+
 .card-img-top {
     width: 22rem;
     height: 20rem;
