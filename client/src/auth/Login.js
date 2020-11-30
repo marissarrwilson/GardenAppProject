@@ -32,7 +32,7 @@ export default function Login() {
     }
   };
   return (
-    <div className="page" style={{marginTop: "180px"}}>
+    <div className="page" style={{marginTop: "180px", marginRight: "25%", marginLeft: "25%"}}>
       <h2>Log in</h2>
       {/* {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
@@ -52,7 +52,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <input type="submit" value="Log in" className="btn btn-success" />
+        <input type="submit" value="Log in" className="btn btn-success" style={{marginTop: "5px"}} />
       </form>
     </div>
   );
