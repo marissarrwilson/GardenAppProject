@@ -27,7 +27,7 @@ function Card(props) {
         </p>
 
         <p classname="postInfo card-text">
-          posted by [user] on <Moment format="MM/DD/YYYY">{props.postDate}</Moment>
+          posted by {props.user} on <Moment format="MM/DD/YYYY">{props.postDate}</Moment>
         </p>
 
         <div className="row">

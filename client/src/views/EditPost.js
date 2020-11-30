@@ -1,10 +1,8 @@
 import axios from "axios";
 import "./Post.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import API from "../utils/API";
 import { Button, Modal } from "react-bootstrap";
-import UserContext from "../context/UserContext";
-import { NavLink } from "react-router-dom"
 
 // import DatePicker from 'react-datepicker';
 // import "react-datepicker/dist/react-datepicker.css";
@@ -12,9 +10,9 @@ import { NavLink } from "react-router-dom"
 function Post() {
   let image = "";
 
-  const { userData, setUserData } = useContext(UserContext);
+  const [formData, setFormData] = useState({
 
-  const [formData, setFormData] = useState({});
+  });
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,8 +51,7 @@ function Post() {
     event.preventDefault();
     // console.log(`Looking what's in image: `, image)
     // formData.imageUrl = image
-    await API.savePost( userData.user.id,
-    {
+    await API.savePost({
       title: formData.title,
       imageUrl: formData.image,
       name: formData.name,
@@ -64,8 +61,7 @@ function Post() {
       // postDate: formObject.postDate,
       plantedDate: formData.plantedDate,
       harvestDate: formData.harvestDate,
-    }
-    );
+    });
 
     setIsOpen(true);
 
@@ -104,87 +100,82 @@ function Post() {
           <br></br>
         </div>
 
-        <div className="form-group">
-          <label className="fieldLabel" for="exampleFormControlSelect1">
-            Plant Name
-          </label>
-          <input
-            value={formData.name}
-            onChange={handleChange}
-            name="name"
-            type="text"
-            class="form-control"
-            id="exampleFormControlSelect1"
-            placeholder="Enter your plant name here ..."
-          />
-
-          <div>
-            <br></br>
-          </div>
-
-          <button
-            className="btn btn-primary"
-            value={formData.name}
-            onClick={handleSelectChange}
-          >
-            Search for picture
-          </button>
-        </div>
-
-        <div>
-          <br></br>
-        </div>
-
-        <div className="card col-sm-12 col-lg-8">
-          <img
-            src={formData.image || "https://via.placeholder.com/320x352"}
-            className="card-img-top responsive"
-            alt="..."
-            name="imageUrl"
-          />
-          <div className="card-body">
-            <p className="fieldLabel card-text">Plant Image</p>
-          </div>
-        </div>
-
-        <div>
-          <br></br>
-        </div>
-
-        <div className="row form-check form-check-inline">
-
-          <div className="form-check-inline col-sm-12 col-lg-5">
-            <label className="fieldLabel col-sm-6" for="sqFootage">
-              Sq. Footage
+        <div className="row">
+          <div className="form-group col-6">
+            <label className="fieldLabel" for="exampleFormControlSelect1">
+              Plant Name
             </label>
-            <div className="col-5">
-              <input
-                className="form-control"
-                id="sqFootage"
-                name="sqft"
-                onChange={handleChange}
-                value={formData.sqft}
-              />
+            <input
+              value={formData.name}
+              onChange={handleChange}
+              name="name"
+              type="text"
+              class="form-control"
+              id="exampleFormControlSelect1"
+              placeholder="Enter your plant name here ..."
+            />
+            <button className="btn btn-primary" value={formData.name} onClick={handleSelectChange}>Search for picture</button>
+
+            <div>
+              <br></br>
             </div>
-            <small className="fieldLabel text-muted col-3" id="sqFootageInline">
-              sq. ft.{" "}
-            </small>
+
+            <div className="form-check form-check-inline">
+              <label className="fieldLabel" for="sqFootage">
+                Sq. Footage
+              </label>
+              <div className="col-sm-5">
+                <input
+                  className="form-control"
+                  id="sqFootage"
+                  name="sqft"
+                  onChange={handleChange}
+                  value={formData.sqft}
+                />
+              </div>
+              <small className="fieldLabel text-muted" id="sqFootageInline">
+                sq. ft.{" "}
+              </small>
+            </div>
+
+            <div>
+              <br></br>
+            </div>
+
+            <div className="form-check form-check-inline">
+              <label className="fieldLabel" for="date-planted">
+                Date Planted
+              </label>
+              <div className="col-sm-6">
+                {/* <div className="form-group">
+                  <label>Date: </label> */}
+                {/* <div>
+                                        <DatePicker />
+                                    </div> */}
+                {/* </div> */}
+                <input
+                  className="form-control"
+                  id="date-planted"
+                  placeholder="MM/DD/YYYY"
+                  name="plantedDate"
+                  onChange={handleChange}
+                  value={formData.plantedDate}
+                />
+              </div>
+            </div>
           </div>
 
-         
-          <div className="form-check-inline col-sm-12 col-lg-5">
-            <label className="fieldLabel col-sm-6" for="date-planted">
-              Date Planted
-            </label>
-            <div className="col-7 ">
-              <input
-                className="form-control"
-                id="date-planted"
-                placeholder="MM/DD/YYYY"
-                name="plantedDate"
-                onChange={handleChange}
-                value={formData.plantedDate}
-              />
+          <div className="col-1"></div>
+
+          <div className="card col-5">
+            <img
+              src={formData.image || "https://via.placeholder.com/320x352"}
+              className="card-img-top responsive"
+              alt="..."
+              name="imageUrl"
+            />
+            <div className="card-body">
+              <p className="fieldLabel card-text">Plant Image</p>
             </div>
           </div>
         </div>
@@ -207,7 +198,7 @@ function Post() {
               onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio1">
-              <i class="fas fa-dot-circle"></i> Just planted
+              Just planted
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -246,7 +237,7 @@ function Post() {
               onChange={handleChange}
             />
             <label className="fieldLabel form-check-label" for="inlineRadio1">
-              <i class="fas fa-leaf"></i> Harvested
+              Harvested
             </label>
           </div>
         </div>
@@ -284,7 +275,6 @@ function Post() {
           </button>
         </center>
       </form>
-
       <Modal
         show={isOpen}
         onHide={hideModal}
@@ -295,9 +285,9 @@ function Post() {
           <Modal.Title className="modalTitle">Post Added!</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="d-block text-center justify-content-center">
-          <NavLink className="modalBtn" variant="primary" to="/feed">
+          <Button className="modalBtn" variant="primary" href="/feed">
             View Feed
-          </NavLink>
+          </Button>
           <Button className="modalBtn" variant="secondary" onClick={hideModal}>
             Close
           </Button>
