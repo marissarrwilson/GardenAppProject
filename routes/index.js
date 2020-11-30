@@ -4,10 +4,10 @@ const gardenController = require("../controllers/gardenController");
 // router.use("/api", apiRoutes);
 function router(app) {
 
-  // app.get('/api/garden', async function(req, res) {
-  //   const data = await gardenController.getPosts()
-  //   res.send(data)
-  // });
+  app.get('/api/garden', async function(req, res) {
+    const data = await gardenController.getPosts()
+    res.send(data)
+  });
 
   app.get('/api/garden/:user?', async function(req, res) {
     const userId = req.params.user || ""

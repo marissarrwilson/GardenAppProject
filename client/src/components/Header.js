@@ -29,9 +29,21 @@ export default function Header(props) {
           <h1><center>Get Growing <i class="fas fa-seedling"></i></center></h1>
           <h5>Your Gardening e-Journal</h5>
         {/* <Button className="navBtn" href="/pantry" variant="secondary" active >My Pantry</Button> */}
-        <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
+        {userData.user ? (
+          <div>
+            <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
+            <NavLink className="navBtn btn btn-secondary" to="/feed" active>My Garden</NavLink>
+            <NavLink className="navBtn btn btn-danger" to ="/post" active>+ New Post</NavLink>
+          </div>
+        ) : (
+          <div>
+            <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
+            <NavLink className="navBtn btn btn-secondary" to="/feed" active>Garden Feed</NavLink>
+          </div>
+        )}
+        {/* <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
         <NavLink className="navBtn btn btn-secondary" to="/feed" active>My Feed</NavLink>
-        <NavLink className="navBtn btn btn-danger" to ="/post" active>+ New Post</NavLink>
+        <NavLink className="navBtn btn btn-danger" to ="/post" active>+ New Post</NavLink> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
