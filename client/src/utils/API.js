@@ -3,6 +3,9 @@ import axios from "axios";
 
 export default {
   // Gets all posts
+  getAllPosts: function(id) {
+    return axios.get("/api/garden")
+  },
   getPosts: function(id="") {
     return axios.get("/api/garden/" + id);
   },

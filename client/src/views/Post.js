@@ -295,7 +295,7 @@ function Post() {
           <Modal.Title className="modalTitle">Post Added!</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="d-block text-center justify-content-center">
-          <NavLink className="modalBtn" variant="primary" to="/feed">
+          <NavLink className="modalBtn btn btn-primary" to="/feed">
             View Feed
           </NavLink>
           <Button className="modalBtn" variant="secondary" onClick={hideModal}>
