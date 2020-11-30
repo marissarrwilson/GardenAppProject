@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   getPosts: async function() {
-    const results = await db.Post.find({})
+    const results = await db.Post.find({}).sort( { postDate: -1 } )
     console.log(`[getPosts]...`, results)
     return results
   },
