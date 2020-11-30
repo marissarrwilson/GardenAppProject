@@ -26,19 +26,19 @@ export default function Header(props) {
 
     <Navbar collapseOnSelect className="navBar" expand="md" variant="dark" fixed="top">
         <Navbar.Brand className="brandNav">
-          <h1><center>Get Growing <i class="fas fa-seedling"></i></center></h1>
+          <h1><center>Get Growing <i className="fas fa-seedling"></i></center></h1>
           <h5>Your Gardening e-Journal</h5>
         {/* <Button className="navBtn" href="/pantry" variant="secondary" active >My Pantry</Button> */}
         {userData.user ? (
           <div>
-            <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
-            <NavLink className="navBtn btn btn-secondary" to="/feed" active>My Garden</NavLink>
-            <NavLink className="navBtn btn btn-danger" to ="/post" active>+ New Post</NavLink>
+            <NavLink className="navBtn btn btn-primary" to="/" active="true">Home</NavLink>
+            <NavLink className="navBtn btn btn-secondary" to="/feed" active="true">My Garden</NavLink>
+            <NavLink className="navBtn btn btn-danger" to ="/post" active="true">+ New Post</NavLink>
           </div>
         ) : (
           <div>
-            <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
-            <NavLink className="navBtn btn btn-secondary" to="/feed" active>Garden Feed</NavLink>
+            <NavLink className="navBtn btn btn-primary" to="/" active="true">Home</NavLink>
+            <NavLink className="navBtn btn btn-secondary" to="/feed" active="true">Garden Feed</NavLink>
           </div>
         )}
         {/* <NavLink className="navBtn btn btn-primary" to="/" active>Home</NavLink>
