@@ -9,7 +9,7 @@ module.exports = {
       console.log(`findById(${id})`)
       results = await db.Post.find({user: id}).populate("user").sort( { postDate: -1 } )
     } else {
-      results = await db.Post.find().sort( { postDate: -1 } )
+      results = await db.Post.find().populate("user").sort( { postDate: -1 } )
     }
     console.log(`[getPosts]...`, results)
     return results

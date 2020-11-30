@@ -27,6 +27,12 @@ function Feed() {
     }
   };
 
+  async function loadAllPosts() {
+    const results = await API.getAllPosts()
+    console.log(`[loadAllPosts]....`, results)
+    setPosts(results.data)
+  }
+
   async function removePost(id) {
     const result = await API.deletePost(id)
     console.log(`[removePost]`, result)
@@ -41,6 +47,7 @@ function Feed() {
         <div className="pageTitle">
           <center>
             <h1>News Feed</h1>
+            <button className="btn btn-primary" onClick={loadAllPosts}>See All Posts</button>
           </center>
         </div>
         <div className="row">
@@ -55,7 +62,7 @@ function Feed() {
                 status={post.status}
                 description={post.description}
                 postDate={post.postDate}
-                user={post.user.displayName || "No user"}
+                user={post.user.displayName || "******"}
                 function={() => removePost(post._id)}
               />
             );
