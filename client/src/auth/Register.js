@@ -38,7 +38,7 @@ export default function Register() {
   };
 
   return (
-    <div className="page" style={{marginTop:"180px"}}>
+    <div className="page" style={{marginTop: "180px", marginRight: "25%", marginLeft: "25%"}}>
       <h2>Register</h2>
       {/* {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
@@ -70,7 +70,7 @@ export default function Register() {
           onChange={(e) => setDisplayName(e.target.value)}
         />
 
-        <input type="submit" value="Register" className="btn btn-success" />
+        <input type="submit" value="Register" className="btn btn-success" style={{marginTop: "5px"}} />
       </form>
     </div>
   );
