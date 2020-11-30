@@ -40,14 +40,14 @@ export default function Login() {
       )} */}
       <form className="form" onSubmit={submit}>
         <label htmlFor="login-email">Email</label>
-        <input class="form-control" aria-describedby="emailHelp"
+        <input className="form-control" aria-describedby="emailHelp"
           id="login-email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <label htmlFor="login-password">Password</label>
-        <input class="form-control" aria-describedby="emailHelp"
+        <input className="form-control" aria-describedby="emailHelp"
           id="login-password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}

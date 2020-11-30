@@ -45,26 +45,26 @@ export default function Register() {
       )} */}
       <form className="form-group" onSubmit={submit}>
         <label htmlFor="register-email">Email</label>
-        <input  class="form-control"  aria-describedby="emailHelp"
+        <input  className="form-control"  aria-describedby="emailHelp"
           id="register-email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <label htmlFor="register-password">Password</label>
-        <input  class="form-control"  aria-describedby="emailHelp"
+        <input  className="form-control"  aria-describedby="emailHelp"
           id="register-password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input  class="form-control"  aria-describedby="emailHelp"
+        <input  className="form-control"  aria-describedby="emailHelp"
           type="password"
           placeholder="Verify password"
           onChange={(e) => setPasswordCheck(e.target.value)}
         />
 
         <label htmlFor="register-display-name">Display name</label>
-        <input  class="form-control" aria-describedby="emailHelp"
+        <input  className="form-control" aria-describedby="emailHelp"
           id="register-display-name"
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
