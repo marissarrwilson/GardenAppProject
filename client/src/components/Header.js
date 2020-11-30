@@ -40,8 +40,8 @@ export default function Header(props) {
             <Nav.Link onClick={logout} href="/">Log out</Nav.Link>
           ) : (
             <div>
-              <Nav.Link onClick={login} >Log in</Nav.Link>
-              <Nav.Link onClick={register} >Sign Up</Nav.Link>
+              <NavLink onClick={login} >Log in</NavLink>
+              <NavLink onClick={register} >Sign Up</NavLink>
             </div>
           )}
         </Nav>               
