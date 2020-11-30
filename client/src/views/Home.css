@@ -9,7 +9,9 @@
  }
 
 .mainImg {
-    width: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
     padding-right:0;
     padding-left:0;
 }
@@ -77,4 +79,33 @@ hr {
     width: 40%;               
     background-color: black;
     height: 1px;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1025px){
+    .homeImage {
+        width: 1025px;
+        height: 675px;
+    }
+    .imageText {
+       color: black;
+       text-decoration-color: black;
+    }
+    .about {
+        margin-top: 100px;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 769px){
+    .homeImage {
+        width: 768px;
+        height: 675px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .homeImage {
+        width: 414px;
+        height: 650px;
+    }
 }
