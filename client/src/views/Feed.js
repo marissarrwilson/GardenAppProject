@@ -47,7 +47,11 @@ function Feed() {
         <div className="pageTitle">
           <center>
             <h1>News Feed</h1>
-            <button className="btn btn-primary" onClick={loadAllPosts}>See All Posts</button>
+            {userData.user ? (
+              <button className="btn btn-primary" onClick={loadAllPosts}>See All Posts</button>
+            ) : (
+              <div></div>
+            )}
           </center>
         </div>
         <div className="row">
