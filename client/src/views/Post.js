@@ -56,7 +56,6 @@ function Post() {
       status: formData.status,
       sqft: formData.sqft,
       description: formData.description,
-      // postDate: formObject.postDate,
       plantedDate: formData.plantedDate,
       harvestDate: formData.harvestDate,
     });
@@ -70,7 +69,6 @@ function Post() {
       status: "",
       sqft: "",
       description: "",
-      // postDate: "",
       plantedDate: "",
       harvestDate: "",
     });

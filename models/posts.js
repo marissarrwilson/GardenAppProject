@@ -11,7 +11,6 @@ const postSchema = new Schema({
   postDate: { type: Date, default: Date.now },
   plantedDate: { type: String },
   harvestDate: { type: Date }
-
 });
 
 const Post = mongoose.model("Post", postSchema);

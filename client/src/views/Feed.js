@@ -44,6 +44,7 @@ function Feed() {
                 datePlanted={post.plantedDate}
                 status={post.status}
                 description={post.description}
+                postDate={post.postDate}
                 function={() => removePost(post._id)}
               />
             );

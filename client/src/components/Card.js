@@ -7,6 +7,11 @@ function Card(props) {
     <div className="card" style={{ width: "22rem" }}>
       <img src={props.image} className="card-img-top" alt="Plant" />
       <div className="card-body">
+
+        <p classname="card-text">
+          Posted on {props.postDate}
+        </p>
+
         <h3 className="card-title"><b>{props.title}</b></h3>
 
         <p className="plantName">
