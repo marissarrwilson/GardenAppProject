@@ -24,7 +24,7 @@ Navigate the site via the heroku link. In the homepage, sign-up for Get Growing 
 
 ## 📸 Screenshots
 
-![Screenshot of Application]()
+![Screenshot of Application](./image/Homepage.png)
 
 ## 🧠 Credits
 
