@@ -18,17 +18,13 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 apiRouter(app);
 
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/gardenapp");
-
-
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/gardenapp",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
   },
   (err) => {
     if (err) throw err;
@@ -36,9 +32,9 @@ mongoose.connect(
   }
 );
 
-app.use("/users",require("./routes/userRouter"));
+app.use("/users", require("./routes/userRouter"));
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
