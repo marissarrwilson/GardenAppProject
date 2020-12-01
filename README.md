@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 🔗 Link
 
-Get Growing can be accessed via the following link: ___________
+Get Growing can be accessed via the following link: [https://murmuring-dawn-18632.herokuapp.com/](https://murmuring-dawn-18632.herokuapp.com/)
 
 ## 💡 Usage
 
