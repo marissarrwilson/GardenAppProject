@@ -7,10 +7,7 @@ function Signup(props) {
       <input type="text" placeholder="Username" />
       <input type="password" placeholder="Password" />
       <input type="password" placeholder="Confirm Password" />
-      <button type="submit">
-        {/* {props.isRegistered ? "Login" : "Registere"} */}
-        Register
-      </button>
+      <button type="submit">Register</button>
     </form>
   );
 }
