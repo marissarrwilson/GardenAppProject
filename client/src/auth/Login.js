@@ -2,8 +2,6 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Axios from "axios";
-// import ErrorNotice from "../misc/ErrorNotice";
-// import { Navbar, Nav, Button,form } from "react-bootstrap";
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -17,12 +15,8 @@ export default function Login() {
     e.preventDefault();
     try {
       const loginUser = { email, password };
-      const loginRes = await Axios.post(
-        "/users/login",
-        loginUser
-      );
+      const loginRes = await Axios.post("/users/login", loginUser);
       setUserData({
-        
         token: loginRes.data.token,
         user: loginRes.data.user,
       });
@@ -33,27 +27,36 @@ export default function Login() {
     }
   };
   return (
-    <div className="page" style={{marginTop: "180px", marginRight: "25%", marginLeft: "25%"}}>
+    <div
+      className="page"
+      style={{ marginTop: "180px", marginRight: "25%", marginLeft: "25%" }}
+    >
       <h2>Log in</h2>
-      {/* {error && (
-        <ErrorNotice message={error} clearError={() => setError(undefined)} />
-      )} */}
       <form className="form" onSubmit={submit}>
         <label htmlFor="login-email">Email</label>
-        <input className="form-control" aria-describedby="emailHelp"
+        <input
+          className="form-control"
+          aria-describedby="emailHelp"
           id="login-email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <label htmlFor="login-password">Password</label>
-        <input className="form-control" aria-describedby="emailHelp"
+        <input
+          className="form-control"
+          aria-describedby="emailHelp"
           id="login-password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <input type="submit" value="Log in" className="btn btn-success" style={{marginTop: "5px"}} />
+        <input
+          type="submit"
+          value="Log in"
+          className="btn btn-success"
+          style={{ marginTop: "5px" }}
+        />
       </form>
     </div>
   );
