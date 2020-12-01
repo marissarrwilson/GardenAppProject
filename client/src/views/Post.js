@@ -6,9 +6,6 @@ import { Button, Modal } from "react-bootstrap";
 import UserContext from "../context/UserContext";
 import { NavLink } from "react-router-dom"
 
-// import DatePicker from 'react-datepicker';
-// import "react-datepicker/dist/react-datepicker.css";
-
 function Post() {
   let image = "";
 
@@ -61,7 +58,6 @@ function Post() {
       status: formData.status,
       sqft: formData.sqft,
       description: formData.description,
-      // postDate: formObject.postDate,
       plantedDate: formData.plantedDate,
       harvestDate: formData.harvestDate,
     }
@@ -75,8 +71,7 @@ function Post() {
       name: "",
       status: "",
       sqft: "",
-      description: "",
-      // postDate: "",
+      description: ""
       plantedDate: "",
       harvestDate: "",
     });

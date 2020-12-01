@@ -4,15 +4,10 @@ import React, { useState } from "react";
 import API from "../utils/API";
 import { Button, Modal } from "react-bootstrap";
 
-// import DatePicker from 'react-datepicker';
-// import "react-datepicker/dist/react-datepicker.css";
-
 function Post() {
   let image = "";
 
-  const [formData, setFormData] = useState({
-
-  });
+  const [formData, setFormData] = useState({});
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -49,8 +44,6 @@ function Post() {
 
   async function handleFormSubmit(event) {
     event.preventDefault();
-    // console.log(`Looking what's in image: `, image)
-    // formData.imageUrl = image
     await API.savePost({
       title: formData.title,
       imageUrl: formData.image,
@@ -58,7 +51,6 @@ function Post() {
       status: formData.status,
       sqft: formData.sqft,
       description: formData.description,
-      // postDate: formObject.postDate,
       plantedDate: formData.plantedDate,
       harvestDate: formData.harvestDate,
     });
@@ -72,7 +64,6 @@ function Post() {
       status: "",
       sqft: "",
       description: "",
-      // postDate: "",
       plantedDate: "",
       harvestDate: "",
     });
@@ -114,7 +105,13 @@ function Post() {
               id="exampleFormControlSelect1"
               placeholder="Enter your plant name here ..."
             />
-            <button className="btn btn-primary" value={formData.name} onClick={handleSelectChange}>Search for picture</button>
+            <button
+              className="btn btn-primary"
+              value={formData.name}
+              onClick={handleSelectChange}
+            >
+              Search for picture
+            </button>
 
             <div>
               <br></br>
@@ -147,12 +144,6 @@ function Post() {
                 Date Planted
               </label>
               <div className="col-sm-6">
-                {/* <div className="form-group">
-                  <label>Date: </label> */}
-                {/* <div>
-                                        <DatePicker />
-                                    </div> */}
-                {/* </div> */}
                 <input
                   className="form-control"
                   id="date-planted"

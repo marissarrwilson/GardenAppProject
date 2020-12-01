@@ -1,44 +1,39 @@
-import React, {useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Card from "../components/Card";
 import { Container } from "react-bootstrap";
 import "./Feed.css";
-import API from "../utils/API"
+import API from "../utils/API";
 import UserContext from "../context/UserContext";
 
 function Feed() {
-
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
 
   const { userData, setUserData } = useContext(UserContext);
 
-
   useEffect(() => {
-    loadPosts()
-  }, [])
+    loadPosts();
+  }, []);
 
   async function loadPosts() {
-    if(userData && userData.user && userData.user.id){
-      const results = await API.getPosts(userData.user.id)
-      setPosts(results.data)
+    if (userData && userData.user && userData.user.id) {
+      const results = await API.getPosts(userData.user.id);
+      setPosts(results.data);
     } else {
-      const results = await API.getPosts()
-      setPosts(results.data)
-
+      const results = await API.getPosts();
+      setPosts(results.data);
     }
-  };
+  }
 
   async function loadAllPosts() {
-    const results = await API.getAllPosts()
-    console.log(`[loadAllPosts]....`, results)
-    setPosts(results.data)
+    const results = await API.getAllPosts();
+    console.log(`[loadAllPosts]....`, results);
+    setPosts(results.data);
   }
 
   async function removePost(id) {
-    const result = await API.deletePost(id)
-    console.log(`[removePost]`, result)
-    loadPosts()
-
-    // add code here to remove a book using API
+    const result = await API.deletePost(id);
+    console.log(`[removePost]`, result);
+    loadPosts();
   }
 
   return (
@@ -48,7 +43,9 @@ function Feed() {
           <center>
             <h1>News Feed</h1>
             {userData.user ? (
-              <button className="btn btn-primary" onClick={loadAllPosts}>See All Posts</button>
+              <button className="btn btn-primary" onClick={loadAllPosts}>
+                See All Posts
+              </button>
             ) : (
               <div></div>
             )}
@@ -57,7 +54,8 @@ function Feed() {
         <div className="row">
           {posts.map((post) => {
             return (
-              <Card key={post.id}
+              <Card
+                key={post.id}
                 title={post.title}
                 image={post.imageUrl}
                 name={post.name}

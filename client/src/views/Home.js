@@ -8,13 +8,15 @@ export default function Home(props) {
   return (
     <div className="justify-content-center text-center">
       <div className="mainImg">
-            <Image className="homeImage" src={manImg} w-100 />
-            <div className="centered-img-overlay">
-            <p className="imageText">Track your plants and make the most of the season.</p>
-            <NavLink className="btn btn-primary" to="/register">
-                Sign Up Today!
-            </NavLink>
-            </div>
+        <Image className="homeImage" src={manImg} w-100 />
+        <div className="centered-img-overlay">
+          <p className="imageText">
+            Track your plants and make the most of the season.
+          </p>
+          <NavLink className="btn btn-primary" to="/register">
+            Sign Up Today!
+          </NavLink>
+        </div>
       </div>
       <div className="about">
         <div className="aboutApp">
